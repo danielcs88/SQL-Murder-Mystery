@@ -48,7 +48,7 @@ deposition = (
     )
     .set_index("date")
     .loc["1/15/2018"]
-    .pipe(lambda df: df.loc[(df["type"] == "murder") & (df["city"] == "SQL City")])
+    .query("type == 'murder' and city == 'SQL City'")
 )
 display(deposition)
 
